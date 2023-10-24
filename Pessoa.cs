@@ -27,21 +27,32 @@ namespace pooCalculaIdade
 			set { nome = value.ToUpper(); }
 		}
 
+		//Vamos melhorar
+
+		private int idade;
+
+		public int Idade
+		{
+			get { 
+				this.CalcularIdade();
+				return this.idade; }
+		}
+
+
 
 		public void ExibirDados() 
 		{
 			Console.WriteLine("Nome: " + this.nome);
             Console.WriteLine("Ano de nascimento: " + this.AnoNascimento);
-			int idade = this.CalcularIdade();
-            Console.WriteLine("Idade: " + idade);
+            this.CalcularIdade();
+            Console.WriteLine("Idade: " + this.Idade);
 		}
 
-		private int CalcularIdade() 
+		private void CalcularIdade() 
 		{
 			DateTime data = DateTime.Now;
 			int ano = data.Year;
-			int idade = ano - this.anoNascimento;
-			return idade;
+			this.idade = ano - this.anoNascimento;
 		}
 
 

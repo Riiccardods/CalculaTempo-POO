@@ -15,7 +15,9 @@
             Console.WriteLine("Ano de nascimento");
             p.AnoNascimento = Convert.ToInt32(Console.ReadLine());
 
-            p.ExibirDados();
+            Console.WriteLine(p.Idade);
+            //p.ExibirDados();
+            
 
 
         }
